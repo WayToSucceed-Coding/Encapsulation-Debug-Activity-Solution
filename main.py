@@ -127,6 +127,7 @@ class UserAuthenticationApp:
 
         if username in self.__users:
             messagebox.showerror("Registration Failed", "User already exists.")
+            
         elif not username or not password:
             messagebox.showerror(
                 "Registration Failed", "Username and password cannot be empty."
