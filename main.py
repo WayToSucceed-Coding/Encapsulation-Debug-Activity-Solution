@@ -117,6 +117,9 @@ class UserAuthenticationApp:
         else:
             messagebox.showerror("Login Failed", "Invalid username or password.")
 
+        self.username_entry.delete(0, tk.END)
+        self.password_entry.delete(0, tk.END)
+
     # Private method to register a new user
     def __register_user(self):
         username = self.username_entry.get()
@@ -131,7 +134,8 @@ class UserAuthenticationApp:
         else:
             self.__users[username] = password
             messagebox.showinfo("Registration Successful", "User registered successfully!")
-
+        self.username_entry.delete(0, tk.END)
+        self.password_entry.delete(0, tk.END)
 
 # Main Program
 if __name__ == "__main__":
